@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="63">
+    <author>Falkkor</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>Snapping Animals Pack</en>
+    </title>
+    <description>
+        <en><![CDATA[This mod pack for Farming Simulator 22 features the base game animal buildings but set to snap at 45 degree angle rotations only. Now you can finally achieve perfectly straight animal building placement on your farm!
+        Included in this pack are ALL base game animal buildings: 
+
+            - Cows:
+                - Cow Pasture
+                - Cow Barn
+                - Cow Barn (Large)
+                - Cow Barn with Feeding Robot 
+
+            - Horses:
+                - Horse Pasture
+                - Horse Barn
+                - Horse Barn (Large)
+
+            - Pigs: 
+                - Pig Pasture
+                - Pigsty
+                - Pigsty (Large)
+
+            - Sheep:
+                - Sheep Pasture
+                - Sheep Barn
+                - Sheep Barn (Large)
+
+            - Chickens: 
+                - Chicken Pasture
+                - Chicken Coop
+
+            - Bees:
+                - Beehive (1 Langstroth Hive)
+                - Beehive (4 Langstroth Hives)
+                - Beehive (Elongated)
+                - Beehive (10 Langstroth Hives)
+                - Beehive (33 Langstroth Hives)
+                - Beehive Honey Pallet Location
+
+            - Others: 
+                - Doghouse
+
+        ]]></en>
+    </description>
+    <iconFilename>store_snappingAnimalsPack.png</iconFilename>
+    <multiplayer supported="true" />
+    <storeItems>
+        <storeItem xmlFilename="cows/cowBarnBig.xml"/>
+        <storeItem xmlFilename="cows/cowBarnBigVector.xml"/>
+        <storeItem xmlFilename="cows/cowBarnMedium.xml"/>
+        <storeItem xmlFilename="cows/cowBarnSmall.xml"/>
+        <storeItem xmlFilename="horses/horseBarnBig.xml"/>
+        <storeItem xmlFilename="horses/horseBarnMedium.xml"/>
+        <storeItem xmlFilename="horses/horseBarnSmall.xml"/>
+        <storeItem xmlFilename="pigs/pigBarnBig.xml"/>
+        <storeItem xmlFilename="pigs/pigBarnMedium.xml"/>
+        <storeItem xmlFilename="pigs/pigBarnSmall.xml"/>
+        <storeItem xmlFilename="sheep/sheepBarnBig.xml"/>
+        <storeItem xmlFilename="sheep/sheepBarnMedium.xml"/>
+        <storeItem xmlFilename="sheep/sheepBarnSmall.xml"/>
+        <storeItem xmlFilename="chickens/chickenBarnBig.xml"/>
+        <storeItem xmlFilename="chickens/chickenBarnSmall.xml"/>
+        <storeItem xmlFilename="bees/beeHivesLevel01.xml"/>
+        <storeItem xmlFilename="bees/beeHivesLevel02.xml"/>
+        <storeItem xmlFilename="bees/beeHivesLevel03.xml"/>
+        <storeItem xmlFilename="bees/beeHivesLevel04.xml"/>
+        <storeItem xmlFilename="bees/beeHivesLevel05.xml"/>
+        <storeItem xmlFilename="bees/beeHivePalletSpawner.xml"/>
+        <storeItem xmlFilename="others/doghouse.xml"/>
+    </storeItems>
+    <l10n>
+        <text name="storeItem_animalBarnCowSmall_snapping"><en>Cow Pasture (Snapping)</en></text>        
+        <text name="storeItem_animalBarnCowMedium_snapping"><en>Cow Barn (Snapping)</en></text>        
+        <text name="storeItem_animalBarnCowBig_snapping"><en>Cow Barn (Large) (Snapping)</en></text>
+        <text name="storeItem_animalBarnCowBigVector_snapping"><en>Cow Barn with Feeding Robot (Snapping)</en></text>
+        <text name="storeItem_animalBarnHorseSmall_snapping"><en>Horse Pasture (Snapping)</en></text>
+        <text name="storeItem_animalBarnHorseMedium_snapping"><en>Horse Barn (Snapping)</en></text>
+        <text name="storeItem_animalBarnHorseBig_snapping"><en>Horse Barn (Large) (Snapping)</en></text>
+        <text name="storeItem_animalBarnPigSmall_snapping"><en>Pig Pasture (Snapping)</en></text>
+        <text name="storeItem_animalBarnPigMedium_snapping"><en>Pigsty (Snapping)</en></text>
+        <text name="storeItem_animalBarnPigBig_snapping"><en>Pigsty (Large) (Snapping)</en></text>
+        <text name="storeItem_animalBarnSheepSmall_snapping"><en>Sheep Pasture (Snapping)</en></text>
+        <text name="storeItem_animalBarnSheepMedium_snapping"><en>Sheep Barn (Snapping)</en></text>
+        <text name="storeItem_animalBarnSheepBig_snapping"><en>Sheep Barn (Large) (Snapping)</en></text>
+        <text name="storeItem_animalBarnChickenSmall_snapping"><en>Chicken Pasture (Snapping)</en></text>
+        <text name="storeItem_animalBarnChickenBig_snapping"><en>Chicken Coop (Snapping)</en></text>
+        <text name="storeItem_beehive01_snapping"><en>Beehive (1 Langstroth Hive) (Snapping)</en></text>
+        <text name="storeItem_beehive02_snapping"><en>Beehive (4 Langstroth Hives) (Snapping)</en></text>
+        <text name="storeItem_beehive03_snapping"><en>Beehive (Elongated) (Snapping)</en></text>
+        <text name="storeItem_beehive04_snapping"><en>Beehive (10 Langstroth Hives) (Snapping)</en></text>
+        <text name="storeItem_beehive05_snapping"><en>Beehive (33 Langstroth Hives) (Snapping)</en></text>
+        <text name="storeItem_beehivePalletSpawnLocation_snapping"><en>Beehive Honey Pallet Location (Snapping)</en></text>
+        <text name="shopItem_doghouse_snapping"><en>Doghouse (Snapping)</en></text>
+	</l10n>
+</modDesc>

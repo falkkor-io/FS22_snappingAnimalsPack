@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable type="horseHusbandry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/placeable.xsd">
+    <storeData>
+        <name>$l10n_storeItem_animalBarnHorseMedium_snapping</name>
+        <image>$data/placeables/rudolfHormann/horseBarnMedium/store_horseBarnMedium.png</image>
+        <price>118500</price>
+        <functions>
+            <function>$l10n_function_animalPenHorse</function>
+        </functions>
+        <lifetime>1000</lifetime>
+        <dailyUpkeep>100</dailyUpkeep>
+        <rotation>0</rotation>
+        <brand>RUDOLFHOERMANN</brand>
+        <species>placeable</species>
+        <category>animalpens</category>
+        <brush>
+            <type>placeable</type>
+            <category>animals</category>
+            <tab>horses</tab>
+        </brush>
+        <vertexBufferMemoryUsage>0</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>0</indexBufferMemoryUsage>
+        <textureMemoryUsage>0</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+
+        <storeIconRendering>
+            <settings cameraXRot="-20" cameraYRot="50" advancedBoundingBox="true"/>
+        </storeIconRendering>
+    </storeData>
+
+    <base>
+        <filename>$data/placeables/rudolfHormann/horseBarnMedium/horseBarnMedium.i3d</filename>
+        <canBeRenamed>true</canBeRenamed>
+    </base>
+
+    <placement useRandomYRotation="false" useManualYRotation="true" placementPositionSnapSize="0.5" placementRotationSnapAngle="45" >
+        <testAreas>
+            <testArea startNode="testArea1Start" endNode="testArea1End" />
+            <testArea startNode="testArea2Start" endNode="testArea2End" />
+        </testAreas>
+
+        <sounds>
+            <place template="medImp" />
+            <placeLayered template="horseLayer" />
+        </sounds>
+    </placement>
+
+    <clearAreas>
+         <clearArea startNode="clearArea1Start" widthNode="clearArea1Width" heightNode="clearArea1Height"/>
+         <clearArea startNode="clearArea2Start" widthNode="clearArea2Width" heightNode="clearArea2Height"/>
+    </clearAreas>
+
+    <leveling requireLeveling="true" maxSmoothDistance="10" maxSlope="75" maxEdgeAngle="30">
+         <levelAreas>
+             <levelArea startNode="levelArea1Start" widthNode="levelArea1Width" heightNode="levelArea1Height" groundType="dirt"/>
+             <levelArea startNode="levelArea2Start" widthNode="levelArea2Width" heightNode="levelArea2Height" groundType="dirt"/>
+         </levelAreas>
+        <paintAreas>
+             <paintArea startNode="paintArea1Start" widthNode="paintArea1Width" heightNode="paintArea1Height" groundType="grass"/>
+        </paintAreas>
+    </leveling>
+
+    <foliageAreas>
+        <foliageArea startNode="foliageArea1Start" widthNode="foliageArea1Width" heightNode="foliageArea1Height" decoFoliage="grassShort" />
+    </foliageAreas>
+
+    <indoorAreas>
+         <indoorArea startNode="indoorArea1Start" widthNode="indoorArea1Width" heightNode="indoorArea1Height"/>
+    </indoorAreas>
+
+    <tipOcclusionUpdateAreas>
+        <tipOcclusionUpdateArea startNode="tipOcclusionUpdateArea1Start" endNode="tipOcclusionUpdateArea1End" />
+    </tipOcclusionUpdateAreas>
+
+    <ai>
+        <updateAreas>
+            <updateArea startNode="tipOcclusionUpdateArea1Start" endNode="tipOcclusionUpdateArea1End" />
+        </updateAreas>
+    </ai>
+
+    <triggerMarkers>
+        <triggerMarker node="markerFood" filename="$data/shared/assets/marker/markerIcons.xml" id="UNLOAD" />
+        <triggerMarker node="markerAnimals" filename="$data/shared/assets/marker/markerIcons.xml" id="ANIMALS" />
+    </triggerMarkers>
+
+    <hotspots>
+        <hotspot type="HORSE" teleportNode="teleportNode" />
+    </hotspots>
+
+    <animatedObjects>
+        <animatedObject saveId="mainDoor" >
+            <animation duration="4.0">
+                <part node="mainDoorPart">
+                    <keyFrame time="0.0" translation="0 0 2.96"/>
+                    <keyFrame time="0.5" translation="0 0 0"/>
+                    <keyFrame time="1.0" translation="0 0 0"/>
+                </part>
+                <part node="mainDoor">
+                    <keyFrame time="0.0" translation="0.242 0 -1.503"/>
+                    <keyFrame time="0.5" translation="0.242 0 -1.503"/>
+                    <keyFrame time="1.0" translation="0.242 0 -4.280"/>
+                </part>
+            </animation>
+            <controls triggerNode="mainDoorTrigger" posAction="ACTIVATE_HANDTOOL" posText="action_openGate" negText="action_closeGate" />
+            <sounds>
+                <moving linkNode="mainDoorBase" template="slidingGateWoodLoop" />
+                <posEnd linkNode="mainDoorBase" template="woodDoorOpen" />
+                <negEnd linkNode="mainDoorBase" template="woodDoorClose" />
+            </sounds>
+        </animatedObject>
+        <animatedObject saveId="bigSideDoors" >
+            <animation duration="4.0">
+                <part node="bigSideDoorTop">
+                    <keyFrame time="0.0" translation="0 1.277 0"/>
+                    <keyFrame time="0.5" translation="0 0 0"/>
+                    <keyFrame time="1.0" translation="0 0 0"/>
+                </part>
+                <part node="bigSideDoorBottom">
+                    <keyFrame time="0.0" translation="0 0 0"/>
+                    <keyFrame time="0.5" translation="0 0 0"/>
+                    <keyFrame time="1.0" translation="0 -1.221 0"/>
+                </part>
+            </animation>
+            <controls triggerNode="bigSideDoorsTrigger" posAction="ACTIVATE_HANDTOOL" posText="action_openGate" negText="action_closeGate" />
+            <sounds>
+                <moving linkNode="bigSideDoorBase" template="plasitcVentilationGateLoop"/>
+                <posEnd linkNode="bigSideDoorBase" template="plasticDoorOpen" />
+                <negEnd linkNode="bigSideDoorBase" template="plasticDoorClose" />
+            </sounds>
+        </animatedObject>
+        <animatedObject saveId="bigDoor1" >
+            <dependency animatedObjectIndex="5" minTime="0" maxTime="0" />
+            <animation duration="4">
+                <part node="bigDoor1Right">
+                    <keyFrame time="0.0" rotation="0 0 0"/>
+                    <keyFrame time="1.0" rotation="0 165 0"/>
+                </part>
+                <part node="bigDoor1Left">
+                    <keyFrame time="0.0" rotation="0 0 0"/>
+                    <keyFrame time="1.0" rotation="0 -165 0"/>
+                </part>
+            </animation>
+            <controls triggerNode="bigDoor1Trigger" posAction="ACTIVATE_HANDTOOL" posText="action_openDoor" negText="action_closeDoor" />
+            <sounds>
+                <moving linkNode="bigDoor1Base" template="woodBigDoorLoop" />
+                <posEnd linkNode="bigDoor1Base" template="metalDoorsOpen" />
+                <negEnd linkNode="bigDoor1Base" template="metalDoorsClose" />
+            </sounds>
+        </animatedObject>
+        <animatedObject saveId="bigDoor2" >
+            <animation duration="4">
+                <part node="bigDoor2Right">
+                    <keyFrame time="0.0" rotation="0 0 0"/>
+                    <keyFrame time="1.0" rotation="0 165 0"/>
+                </part>
+                <part node="bigDoor2Left">
+                    <keyFrame time="0.0" rotation="0 0 0"/>
+                    <keyFrame time="1.0" rotation="0 -165 0"/>
+                </part>
+            </animation>
+            <controls triggerNode="bigDoor2Trigger" posAction="ACTIVATE_HANDTOOL" posText="action_openDoor" negText="action_closeDoor" />
+            <sounds>
+                <moving linkNode="bigDoor2Base" template="woodBigDoorLoop" />
+                <posEnd linkNode="bigDoor2Base" template="metalDoorsOpen" />
+                <negEnd linkNode="bigDoor2Base" template="metalDoorsClose" />
+            </sounds>
+        </animatedObject>
+        <animatedObject saveId="smallDoor" >
+            <dependency animatedObjectIndex="3" minTime="0" maxTime="0" />
+            <animation duration="3">
+                <part node="smallDoor">
+                    <keyFrame time="0.0" rotation="0 0 0"/>
+                    <keyFrame time="1.0" rotation="0 165 0"/>
+                </part>
+            </animation>
+            <controls triggerNode="smallDoorTrigger" posAction="ACTIVATE_HANDTOOL" posText="action_openDoor" negText="action_closeDoor" />
+            <sounds>
+                <moving linkNode="smallDoorBase" template="metalDoorsLoop" />
+                <posEnd linkNode="smallDoorBase" template="metalDoorsOpen" />
+                <negEnd linkNode="smallDoorBase" template="metalDoorsClose" />
+            </sounds>
+        </animatedObject>
+        <animatedObject saveId="smallInnerDoor" >
+            <animation duration="3">
+                <part node="smallInnerDoor">
+                    <keyFrame time="0.0" rotation="0 0 0"/>
+                    <keyFrame time="1.0" rotation="0 -165 0"/>
+                </part>
+            </animation>
+            <controls triggerNode="smallInnerDoorTrigger" posAction="ACTIVATE_HANDTOOL" posText="action_openDoor" negText="action_closeDoor" />
+            <sounds>
+                <moving linkNode="smallInnerDoorBase" template="glassDoorLoop" />
+                <posEnd linkNode="smallInnerDoorBase" template="metalDoorsOpen" />
+                <negEnd linkNode="smallInnerDoorBase" template="metalDoorsClose" />
+            </sounds>
+        </animatedObject>
+    </animatedObjects>
+
+    <dynamicallyLoadedParts>
+        <dynamicallyLoadedPart node="0" linkNode="lightSwitch" filename="$data/shared/assets/lights/terraLed/switch.i3d" />
+        <dynamicallyLoadedPart node="0" linkNode="controlBox" filename="$data/placeables/rudolfHormann/controlPanel/controlPanel.i3d">
+            <objectChange node="0|0" rotationActive="0 -120 0"/>
+            <objectChange node="0|1" rotationActive="0 120 0"/>
+        </dynamicallyLoadedPart>
+    </dynamicallyLoadedParts>
+
+    <lights>
+        <sharedLight filename="$data/shared/assets/lights/terraLed/fluorescentTube50W.xml" linkNode="tubeLight01" groupIndex="1"/>
+        <sharedLight filename="$data/shared/assets/lights/terraLed/fluorescentTube50W.xml" linkNode="tubeLight02" groupIndex="1"/>
+        <sharedLight filename="$data/shared/assets/lights/terraLed/fluorescentTube50W.xml" linkNode="tubeLight03" groupIndex="1" color="1 0 0" />
+        <sharedLight filename="$data/shared/assets/lights/terraLed/fluorescentTube50W.xml" linkNode="tubeLight04" groupIndex="1" color="1 0 0" />
+        <sharedLight filename="$data/shared/assets/lights/terraLed/fluorescentTube50W.xml" linkNode="tubeLight05" groupIndex="1" color="1 0 0" />
+        <sharedLight filename="$data/shared/assets/lights/terraLed/fluorescentTube50W.xml" linkNode="tubeLight06" groupIndex="1" color="1 0 0" />
+        <sharedLight filename="$data/shared/assets/lights/terraLed/fluorescentTube50W.xml" linkNode="tubeLight07" groupIndex="1" color="1 0 0" />
+        <sharedLight filename="$data/shared/assets/lights/terraLed/fluorescentTube50W.xml" linkNode="tubeLight08" groupIndex="1" color="1 0 0" />
+        <sharedLight filename="$data/shared/assets/lights/terraLed/fluorescentTube50W.xml" linkNode="tubeLight09" groupIndex="1" color="1 0 0" />
+        <sharedLight filename="$data/shared/assets/lights/terraLed/fluorescentTube50W.xml" linkNode="tubeLight10" groupIndex="1" color="1 0 0" />
+
+        <realLights>
+            <low>
+                <light node="realLightsLow" groupIndex="1"/>
+            </low>
+            <high>
+                <light node="realLightsHigh" groupIndex="1"/>
+            </high>
+        </realLights>
+
+        <group name="$l10n_action_placeableLightShed" activateTime="18:30" deactivateTime="7:00"/>
+    </lights>
+
+    <infoTrigger triggerNode="infoTrigger" />
+
+    <husbandry saveId="Animals_HORSE" hasStatistics="false">
+        <storage node="storage" fillTypes="STRAW MANURE" isExtension="false">
+            <capacity fillType="STRAW" capacity="3200" />
+            <capacity fillType="MANURE" capacity="0" />
+        </storage>
+
+        <unloadingStation supportsExtension="false" hideFromPricesMenu="true">
+            <unloadTrigger exactFillRootNode="exactFillRootNodeStraw" fillTypes="STRAW"  >
+                <baleTrigger triggerNode="baleTriggerStraw"/>
+            </unloadTrigger>
+        </unloadingStation>
+
+        <loadingStation supportsExtension="true" storageRadius="50" fillTypes="straw" />
+
+        <animals type="HORSE" maxNumAnimals="8">
+            <navigation rootNode="navigationRootNode" filename="$data/placeables/rudolfHormann/horseBarnMedium/navigationMesh.i3d" />
+            <loadingTrigger node="loadingTrigger" />
+
+            <deliveryAreas>
+                 <deliveryArea startNode="deliveryArea1Start" widthNode="deliveryArea1Width" heightNode="deliveryArea1Height"/>
+            </deliveryAreas>
+        </animals>
+
+        <food capacity="11500" >
+            <foodPlane node="foodPlane" minRotX="90" maxRotX="0" changeVisibility="true" defaultFillType="OAT"/>
+            <feedingTrough exactFillRootNode="exactFillRootNodeFood">
+                <baleTrigger triggerNode="baleTrigger"/>
+            </feedingTrough>
+        </food>
+
+        <water automaticWaterSupply="true" />
+
+        <straw>
+            <manure factor="1.5" />
+            <strawPlane node="strawPlane" changeVisibility="true" />
+        </straw>
+
+        <fences>
+            <fence filename="$data/placeables/lizard/fencesFarm/level03/fencesFarmLevel03Singleton.xml" hasStartPole="true" hasEndPole="true">
+                <node node="fence1Node1" />
+                <node node="fence1Node2" />
+                <node node="fence1Node3" />
+                <node node="fence1Node4" />
+            </fence>
+            <fence filename="$data/placeables/lizard/fencesFarm/level03/fencesFarmLevel03Singleton.xml" hasStartPole="true" hasEndPole="true">
+                <node node="fence2Node1" />
+                <node node="fence2Node2" />
+            </fence>
+            <gate node="gateNode" filename="$data/placeables/lizard/fencesFarm/level03/fencesFarmLevel03Singleton.xml" gateIndex="1"/>
+        </fences>
+    </husbandry>
+
+    <i3dMappings>
+        <i3dMapping id="teleportNode" node="0>0" />
+        <i3dMapping id="exactFillRootNodeFood" node="0>1|0" />
+        <i3dMapping id="baleTrigger" node="0>1|1" />
+        <i3dMapping id="foodPlane" node="0>1|2|0" />
+        <i3dMapping id="storage" node="0>2" />
+        <i3dMapping id="exactFillRootNodeStraw" node="0>3|0" />
+        <i3dMapping id="baleTriggerStraw" node="0>3|1" />
+        <i3dMapping id="strawPlane" node="0>3|2" />
+        <i3dMapping id="waterPlane" node="0>4|1" />
+        <i3dMapping id="navigationRootNode" node="0>5" />
+        <i3dMapping id="fence1Node1" node="0>6|0|0" />
+        <i3dMapping id="fence1Node2" node="0>6|0|1" />
+        <i3dMapping id="fence1Node3" node="0>6|0|2" />
+        <i3dMapping id="fence1Node4" node="0>6|0|3" />
+        <i3dMapping id="fence2Node1" node="0>6|1|0" />
+        <i3dMapping id="fence2Node2" node="0>6|1|1" />
+        <i3dMapping id="gateNode" node="0>6|2" />
+        <i3dMapping id="markerFood" node="0>7|0" />
+        <i3dMapping id="markerAnimals" node="0>7|1" />
+        <i3dMapping id="infoTrigger" node="0>8" />
+        <i3dMapping id="loadingTrigger" node="0>9" />
+        <i3dMapping id="bigSideDoorBase" node="0>10|0" />
+        <i3dMapping id="bigSideDoorBottom" node="0>10|0|0" />
+        <i3dMapping id="bigSideDoorTop" node="0>10|0|0|0" />
+        <i3dMapping id="bigSideDoorsTrigger" node="0>10|0|1" />
+        <i3dMapping id="mainDoorBase" node="0>10|1" />
+        <i3dMapping id="mainDoor" node="0>10|1|0" />
+        <i3dMapping id="mainDoorPart" node="0>10|1|0|0" />
+        <i3dMapping id="mainDoorTrigger" node="0>10|1|1" />
+        <i3dMapping id="bigDoor1Base" node="0>10|2" />
+        <i3dMapping id="bigDoor1Right" node="0>10|2|0" />
+        <i3dMapping id="bigDoor1Left" node="0>10|2|1" />
+        <i3dMapping id="bigDoor1Trigger" node="0>10|2|2" />
+        <i3dMapping id="bigDoor2Base" node="0>10|3" />
+        <i3dMapping id="bigDoor2Right" node="0>10|3|0" />
+        <i3dMapping id="bigDoor2Left" node="0>10|3|1" />
+        <i3dMapping id="bigDoor2Trigger" node="0>10|3|2" />
+        <i3dMapping id="smallDoorBase" node="0>10|4" />
+        <i3dMapping id="smallDoor" node="0>10|4|0" />
+        <i3dMapping id="smallDoorTrigger" node="0>10|4|1" />
+        <i3dMapping id="smallInnerDoorBase" node="0>10|5" />
+        <i3dMapping id="smallInnerDoor" node="0>10|5|0" />
+        <i3dMapping id="smallInnerDoorTrigger" node="0>10|5|1" />
+        <i3dMapping id="realLightsLow" node="0>11|0|0" />
+        <i3dMapping id="realLightsHigh" node="0>11|0|1" />
+        <i3dMapping id="linkedLights" node="0>11|1" />
+        <i3dMapping id="tubeLight01" node="0>11|1|0" />
+        <i3dMapping id="tubeLight02" node="0>11|1|1" />
+        <i3dMapping id="tubeLight03" node="0>11|1|2" />
+        <i3dMapping id="tubeLight04" node="0>11|1|3" />
+        <i3dMapping id="tubeLight05" node="0>11|1|4" />
+        <i3dMapping id="tubeLight06" node="0>11|1|5" />
+        <i3dMapping id="tubeLight07" node="0>11|1|6" />
+        <i3dMapping id="tubeLight08" node="0>11|1|7" />
+        <i3dMapping id="tubeLight09" node="0>11|1|8" />
+        <i3dMapping id="tubeLight10" node="0>11|1|9" />
+        <i3dMapping id="lightSwitch" node="0>11|2" />
+        <i3dMapping id="deliveryArea1Start" node="0>12|0" />
+        <i3dMapping id="deliveryArea1Width" node="0>12|0|0" />
+        <i3dMapping id="deliveryArea1Height" node="0>12|0|1" />
+        <i3dMapping id="clearArea1Start" node="0>13|0" />
+        <i3dMapping id="clearArea1Width" node="0>13|0|0" />
+        <i3dMapping id="clearArea1Height" node="0>13|0|1" />
+        <i3dMapping id="clearArea2Start" node="0>13|1" />
+        <i3dMapping id="clearArea2Width" node="0>13|1|0" />
+        <i3dMapping id="clearArea2Height" node="0>13|1|1" />
+        <i3dMapping id="paintArea1Start" node="0>14|0" />
+        <i3dMapping id="paintArea1Width" node="0>14|0|0" />
+        <i3dMapping id="paintArea1Height" node="0>14|0|1" />
+        <i3dMapping id="foliageArea1Start" node="0>15|0" />
+        <i3dMapping id="foliageArea1Width" node="0>15|0|0" />
+        <i3dMapping id="foliageArea1Height" node="0>15|0|1" />
+        <i3dMapping id="levelArea1Start" node="0>16|0" />
+        <i3dMapping id="levelArea1Width" node="0>16|0|0" />
+        <i3dMapping id="levelArea1Height" node="0>16|0|1" />
+        <i3dMapping id="levelArea2Start" node="0>16|1" />
+        <i3dMapping id="levelArea2Width" node="0>16|1|0" />
+        <i3dMapping id="levelArea2Height" node="0>16|1|1" />
+        <i3dMapping id="indoorArea1Start" node="0>17|0" />
+        <i3dMapping id="indoorArea1Width" node="0>17|0|0" />
+        <i3dMapping id="indoorArea1Height" node="0>17|0|1" />
+        <i3dMapping id="testArea1Start" node="0>18|0" />
+        <i3dMapping id="testArea1End" node="0>18|0|0" />
+        <i3dMapping id="testArea2Start" node="0>18|1" />
+        <i3dMapping id="testArea2End" node="0>18|1|0" />
+        <i3dMapping id="tipOcclusionUpdateArea1Start" node="0>19|0" />
+        <i3dMapping id="tipOcclusionUpdateArea1End" node="0>19|0|0" />
+        <i3dMapping id="controlBox" node="0>20" />
+        <i3dMapping id="horseBarnMedium_vis" node="0>21|0|6" />
+    </i3dMappings>
+</placeable>
