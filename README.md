@@ -1,4 +1,10 @@
-## This mod pack for Farming Simulator 22 features the base game animal buildings but set to snap at 45 degree angle rotations only. Now you can finally achieve perfectly straight animal building placement on your farm!
+```
+This mod pack for Farming Simulator 22 features the base game animal buildings but set to snap at 45 degree angle rotations only. 
+
+Now you can finally achieve perfectly straight animal building placement on your farm!
+```
+
+![Snapping Animals Pack Screenshot](/screenshots/snapping_animals_screen1.jpg)
 
 ```
 Included in this pack are ALL base game animal buildings:
@@ -38,7 +44,9 @@ Included in this pack are ALL base game animal buildings:
 
 - Others: 
     - Doghouse
+```
 
+```
 Changelog:
     - v1.0.0.0 
         - GitHub Release
